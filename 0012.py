@@ -10,13 +10,13 @@ class Solution:
             else:
                return rep1 * count
 
-        i, num = num // 1000, num % 1000
+        i, num = divmod(num, 1000)
         res = 'M' * i
 
-        i, num = num // 100, num % 100
+        i, num = divmod(num, 100)
         res += repRoman(i, 'C', 'D', 'M')
 
-        i, num = num // 10, num % 10
+        i, num = divmod(num, 10)
         res += repRoman(i, 'X', 'L', 'C')
 
         return res + repRoman(num, 'I', 'V', 'X')
