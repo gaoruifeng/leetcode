@@ -1,9 +1,7 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
         mapping = {'I':1, 'V': 5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
-        res = 0
-        for c in s:
-            res += mapping[c]
+        res = sum(mapping[c] for c in s)
         if s.find('CM') != -1: res -= 200
         if s.find('CD') != -1: res -= 200
         if s.find('XC') != -1: res -= 20
